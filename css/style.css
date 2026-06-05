@@ -1,0 +1,109 @@
+/* ----------------------------------
+   Base
+---------------------------------- */
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: rgb(252, 252, 252);
+  color: black;
+  font-family: 'General Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ----------------------------------
+   ASCII Background
+---------------------------------- */
+#ascii-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#ascii-background pre,
+#ascii-background table,
+#ascii-background canvas {
+  pointer-events: none;
+}
+
+/* ----------------------------------
+   Page Content
+---------------------------------- */
+.hero {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-end;
+
+  min-height: 100vh;
+  padding: 22px;
+  width: 100%;
+  text-wrap: pretty;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  max-width: 620px;
+}
+
+.link {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+  z-index: 10;
+  width: auto;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+/* ----------------------------------
+   Responsive
+---------------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 16px;
+  }
+
+  .link {
+    position: static;
+  }
+}
